@@ -1,53 +1,471 @@
-<noscript>
-    <h1 class="errormessagejs"><a style="text-decoration: none; color: red" href="https://www.enable-javascript.com/" target="_blank">Please enable JavaScript in order to visit this website.</a></h1>
-    <style>
-        .fullscreen-bg, .vp-counter, #content, p {
-            display: none;
-        }
-    </style>
-</noscript>
+﻿
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-
-<title>Pasi.移动</title>
-<script defer src="assets/js/0xr.title.js"></script>
-<script src="../code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="icon" type="image/png" href="../avatars.steamstatic.com/3c23365daca63cac30dfc6d8088814e837553754_full.jpg" />
-
-<script async src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<link rel="stylesheet" href="assets/css/xd.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="ZoxP5wjEDksh5vcfR8mC1EwgdMgzstucj3PtQgXnZLM" />
-<meta name="copyright" content="Drohungen">
-<meta name="description" content="Pasi.移动 - social media links | hosted for & by hosting-network.eu">
-<meta name="keywords" content="">
-<meta name="author" content="Pasi.移动">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="dep/icon.png">
+</script>
+<title>click to enter</title>
+<style>
+        @font-face {
+            src: url('dep/smallest.ttf');
+            font-family: 'p7';
+        }
 
-<meta property="og:title" content="Pasi.移动 - social media links">
-<meta property="og:description" content="Discord: Drohungen
-<meta property="og:image" content="https://avatars.steamstatic.com/3c23365daca63cac30dfc6d8088814e837553754_full.jpg">
-<meta data-n-head="ssr" data-hid="theme-color" name="theme-color" content="#1a1a1a">
+        @import url('css2');
+
+        ::-webkit-scrollbar {
+         width: 0px;
+         background: transparent;
+         }
+
+         @-moz-document url-prefix() {
+            html{
+              scrollbar-width: none;
+            }
+          }
+          body {
+            margin: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overflow-y: scroll;
+          }
+          body::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+          }
+          
+        body {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        }
+        #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+        cursor: pointer;
+        }
+
+        #text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+        color: white;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        }
+
+        .row1 {
+        display: flex;
+        position: fixed;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        .column1 {
+            padding: 10px;
+        }
+
+        * {
+        cursor: crosshair;
+        box-sizing: border-box;
+        }
+
+        body {
+        margin: 0;
+        font-family: Arial;
+        font-size: 17px;
+        background-color: #000;
+        color: white;
+        }
+
+        .myVideo {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        }
+
+        .content {
+        display:inline-block !important; 
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        color: #f1f1f1;
+        padding: 20px;
+        }
+
+        #myBtn {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        }
+
+		    #tsparticles {
+		      width: 100%;
+		      height: 100%;
+		    }
+        .login-box form a {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: #E2A6FF;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 40px;
+          letter-spacing: 4px
+        }
+
+        .login-box a:hover {
+          background: #E2A6FF;
+          color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #E2A6FF,
+                      0 0 25px #E2A6FF,
+                      0 0 50px #E2A6FF,
+                      0 0 100px #E2A6FF;
+        }
+
+        .login-box a span {
+          position: absolute;
+          display: block;
+        }
+
+        .login-box a span:nth-child(1) {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, #E2A6FF);
+          animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+          0% {
+            left: -100%;
+          }
+          50%,100% {
+            left: 100%;
+          }
+        }
+
+        .login-box a span:nth-child(2) {
+          top: -100%;
+          right: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, #E2A6FF);
+          animation: btn-anim2 1s linear infinite;
+          animation-delay: .25s
+        }
+
+        @keyframes btn-anim2 {
+          0% {
+            top: -100%;
+          }
+          50%,100% {
+            top: 100%;
+          }
+        }
+
+        .login-box a span:nth-child(3) {
+          bottom: 0;
+          right: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(270deg, transparent, #E2A6FF);
+          animation: btn-anim3 1s linear infinite;
+          animation-delay: .5s
+        }
+
+        @keyframes btn-anim3 {
+          0% {
+            right: -100%;
+          }
+          50%,100% {
+            right: 100%;
+          }
+        }
+
+        .login-box a span:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(360deg, transparent, #E2A6FF);
+          animation: btn-anim4 1s linear infinite;
+          animation-delay: .75s
+        }
+
+        @keyframes btn-anim4 {
+          0% {
+            bottom: -100%;
+          }
+          50%,100% {
+            bottom: 100%;
+          }
+        }
+
+    </style>
+<link rel="stylesheet" href="npm/bulma%400.9.3/css/bulma.min.css">
 </head>
-<div class="fullscreen-bg">
-<video loop playsinline preload="auto" muted autoplay class="fullscreen-bg__video" id="myVideo">
-<source src="https://streamer.0xr.dev/video?n=absent-nichtperfekt" type="video/mp4">
-Your browser does not support the video playback!
-</video>
-</div>
-<div id="audio-control" class="muted"><p>Click to unmute</p></div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-87RV4DQ1DX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-87RV4DQ1DX');
+</script>
 <body>
-<div id="content">
-<h1>Drohungen</h1>
-<h2>PHP, Python, JS, NodeJS, Lua and C# Developer, Golang</h2>
-<hr>
-<p class="vp-counter"><a target="_blank" href="https://steamcommunity.com" style="text-decoration:none;">steam</a> × <a id="copydiscord" target="_blank" href="" style="text-decoration:none;">discord</a> × <a target="_blank" href="" style="text-decoration:none;">email</a></p>
+<div id="captcha">
+<div class="content">
+<div class="row1">
+<div class="column1">
+<div class="login-box">
+<form>
+<a onclick="enterSite();">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+click to enter
+</a>
+</form>
 </div>
-<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
-<script async src="assets/js/0xr.security.js"></script>
-<script async src="assets/js/0xr.video.js"></script>
+</div>
+</div>
+</div>
+</div>
+<div id="mainSite">
+<video autoplay="" loop="" class="myVideo" id="myVideo" playsinline="">
+Your browser does not support HTML5 video.
+</video>
+<div class="content">
+<div class="row1">
+<div class="column1">
+<center>
+<img src="dep/logo.png">
+<h1 style="font-family: 'p7';font-size:25px;color: #ffffff; text-shadow: -1px -1px 0 #E2A6FF,  1px -1px 0 #E2A6FF,  -1px 1px 0 #E2A6FF, 1px 1px 0 #E2A6FF;">pasi.移动 </h1>
+<span style="font-family: 'Inconsolata', monospace;" class="typewrite" data-period="2000" data-type='[ "pasi.移动, Dev, Beat Producer" ]'>...</span>
+<div class="columns">
+<div class="column">
+<a href="" style="font-family: 'Inconsolata', monospace;color: #ffffff !important;" target="_blank" style="color: #f34943 !important;"></a>
+</div>
+</div>
+<a href="" style="font-family: 'Inconsolata', monospace;color: #ffffff !important;">|</a>
+<a href="" style="font-family: 'Inconsolata', monospace;color: #ffffff !important;"></a>
+</center>
+</div>
+</div>
+</div>
+</div>
+<script src="npm/tsparticles%401.39.0/tsparticles.min.js"></script>
+<script>
+  function MovingTitle(writeText, interval, visibleLetters) {
+    var _instance = {};
+    var _currId = 0;
+    var _numberOfLetters = writeText.length;
+    function updateTitle() {
+        _currId += 1;
+        if(_currId > _numberOfLetters - 1) {
+            _currId = 0; 
+        }
+        var startId = _currId;
+        var endId = startId + visibleLetters;
+        var finalText;
+        if(endId < _numberOfLetters - 1) {
+            finalText = writeText.substring(startId, endId);
+        } else {
+            var cappedEndId = _numberOfLetters;
+            endId = endId - cappedEndId;
+            finalText = writeText.substring(startId, cappedEndId) +     writeText.substring(0, endId);
+        }
+        document.title = finalText; 
+    }
+    _instance.init = function() {
+        setInterval(updateTitle, interval);
+    };
+    return _instance;
+  }
+</script>
+<script>
+var x = document.getElementById("mainSite");
+var y = document.getElementById("captcha");
+var particles = document.getElementById("captcha");
+
+var source = document.createElement('source');
+
+x.style.display = "none";
+
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+source.setAttribute('src', 'dep/trap7.mp4');
+video.appendChild(source);
+
+video.pause();
+
+function enterSite() {
+  var title = new MovingTitle("pasi.移动   ", 250, 15);
+  title.init();
+  video.volume = 0.15;
+	video.play();
+	x.style.display = "block";
+	y.style.display = "none";
+	
+tsParticles.load("tsparticles", {
+  fpsLimit: 144,
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "grab"
+      },
+      resize: true
+    },
+  },
+  particles: {
+    color: {
+      value: "#E2A6FF"
+    },
+    links: {
+      color: "#E2A6FF",
+      distance: 100,
+      enable: true,
+      opacity: 1,
+      width: 1
+    },
+    collisions: {
+      enable: true
+    },
+    move: {
+      direction: "none",
+      enable: true,
+      outMode: "bounce",
+      random: false,
+      speed: 5,
+      straight: false
+    },
+    number: {
+      density: {
+        enable: true,
+        value_area: 500
+      },
+      value: 25
+    },
+    opacity: {
+      value: 1
+    },
+    shape: {
+      type: "edge"
+    },
+    size: {
+      random: true,
+      value: 3
+    }
+  },
+  detectRetina: true
+});
+
+}
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+    }
+
+    setTimeout(function() {
+    that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
+};
+
+</script>
+</body>
 </html>
